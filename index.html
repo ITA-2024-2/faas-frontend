@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exams Management</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exams Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Exams Management</h1>
-    <div class="form-container">
-      <h2>Create Exam</h2>
-      <form id="createExamForm">
-        <label for="examSubject">Subject</label>
-        <input type="text" id="examSubject" required>
-        
-        <label for="examDate">Date</label>
-        <input type="datetime-local" id="examDate" required>
-        
-        <label for="professor">Professor</label>
-        <input type="text" id="professor" required>
-        
-        <label for="assistant">Assistant</label>
-        <input type="text" id="assistant" required>
-        
-        <label for="numberOfStudents">Number of Students</label>
-        <input type="number" id="numberOfStudents" required>
-        
-        <label for="examLocation">Location</label>
-        <input type="text" id="examLocation" required>
-        
-        <label for="examClass">Class</label>
-        <input type="text" id="examClass" required>
-        
-        <button type="submit">Create Exam</button>
-      </form>
+    <div class="container">
+        <h1>Exams Management</h1>
+        <div class="form-container">
+            <h2>Create Exam</h2>
+            <form id="createExamForm">
+                <label for="examSubject">Subject</label>
+                <input type="text" id="examSubject" required>
+
+                <label for="examDate">Date</label>
+                <input type="datetime-local" id="examDate" required>
+
+                <label for="professor">Professor</label>
+                <input type="text" id="professor" required>
+
+                <label for="assistant">Assistant</label>
+                <input type="text" id="assistant" required>
+
+                <label for="numberOfStudents">Number of Students</label>
+                <input type="number" id="numberOfStudents" required>
+
+                <label for="examLocation">Location</label>
+                <input type="text" id="examLocation" required>
+
+                <label for="examClass">Class</label>
+                <input type="text" id="examClass" required>
+
+                <button type="submit">Create Exam</button>
+            </form>
+        </div>
+        <div class="form-container" id="updateExamFormContainer" style="display: none;">
+            <h2>Update Exam</h2>
+            <form id="updateExamForm">
+                <input type="hidden" id="updateExamId">
+                <label for="updateExamSubject">Subject</label>
+                <input type="text" id="updateExamSubject" required>
+
+                <label for="updateExamDate">Date</label>
+                <input type="datetime-local" id="updateExamDate" required>
+
+                <label for="updateProfessor">Professor</label>
+                <input type="text" id="updateProfessor" required>
+
+                <label for="updateAssistant">Assistant</label>
+                <input type="text" id="updateAssistant" required>
+
+                <label for="updateNumberOfStudents">Number of Students</label>
+                <input type="number" id="updateNumberOfStudents" required>
+
+                <label for="updateExamLocation">Location</label>
+                <input type="text" id="updateExamLocation" required>
+
+                <label for="updateExamClass">Class</label>
+                <input type="text" id="updateExamClass" required>
+
+                <button type="submit">Update Exam</button>
+            </form>
+        </div>
+        <div class="list-container">
+            <h2>All Exams</h2>
+            <button id="fetchExamsButton">Fetch All Exams</button>
+            <ul id="examsList"></ul>
+        </div>
     </div>
-    <div class="list-container">
-      <h2>All Exams</h2>
-      <button id="fetchExamsButton">Fetch All Exams</button>
-      <ul id="examsList"></ul>
-    </div>
-  </div>
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
